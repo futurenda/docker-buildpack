@@ -6,4 +6,4 @@
 - python3
 - python3-pip
 - awscli
-- Docker 1.12
+- Docker 17.03
