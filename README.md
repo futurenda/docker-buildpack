@@ -8,3 +8,5 @@
 - awscli
 - Docker 17.03
 - Go 1.8
+- protoc 3.1
+- protoc-gen-go
