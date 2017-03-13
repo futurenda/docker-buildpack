@@ -35,3 +35,6 @@ RUN mkdir -p /tmp/downloads/protoc \
 
 # protoc-gen-go
 RUN go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
+
+# golint
+RUN go get -u github.com/golang/lint/golint
