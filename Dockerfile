@@ -14,6 +14,6 @@ RUN pip3 install awscli
 
 ENV GODIST go1.8.linux-amd64.tar.gz
 RUN mkdir -p downloads \
-    && curl -o downloads/$GODIST https://storage.googleapis.com/golang/$GODIST
-    && rm -rf /usr/local/go
+    && curl -o downloads/$GODIST https://storage.googleapis.com/golang/$GODIST \
+    && rm -rf /usr/local/go \
     && tar -C /usr/local -xzf downloads/$GODIST
