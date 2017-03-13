@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-dev \
         python3-pip \
         unzip \
+        xz-utils \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Docker 17.03
