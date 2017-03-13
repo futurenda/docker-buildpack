@@ -7,3 +7,4 @@
 - python3-pip
 - awscli
 - Docker 17.03
+- Go 1.8
