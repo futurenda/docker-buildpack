@@ -7,6 +7,7 @@
 - python3-pip
 - awscli
 - Docker 17.03
+- docker-compose 1.11.2
 - Go 1.8
 - protoc 3.1
 - protoc-gen-go

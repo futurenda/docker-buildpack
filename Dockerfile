@@ -12,6 +12,9 @@ RUN curl -L -o /tmp/docker.tgz https://get.docker.com/builds/Linux/x86_64/docker
     && tar -xz -C /tmp -f /tmp/docker.tgz \
     && mv /tmp/docker/docker* /usr/bin/
 
+# docker-compose 1.11.2
+RUN curl -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
 # awscli
 RUN pip3 install awscli
 
