@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         unzip \
         xz-utils \
  	netcat-openbsd \
+ 	mariadb-client \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Docker 17.03
