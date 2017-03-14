@@ -1,12 +1,13 @@
 FROM golang:1.8.0
 
-# Python 3, unzip
+# Python 3, unzip, netcat
 RUN apt-get update && apt-get install -y --no-install-recommends \
         python3 \
         python3-dev \
         python3-pip \
         unzip \
         xz-utils \
+ 	netcat-openbsd \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Docker 17.03
