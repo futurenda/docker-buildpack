@@ -1,4 +1,4 @@
-FROM golang:1.8.0
+FROM golang:1.8.1
 
 # Python 3, unzip, netcat
 RUN apt-get update && apt-get install -y --no-install-recommends \
