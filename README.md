@@ -13,3 +13,5 @@
 - protoc 3.1
 - protoc-gen-go
 - xz-utils
+- netcat-openbsd
+- mariadb-client
