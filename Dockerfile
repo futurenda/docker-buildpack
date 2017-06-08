@@ -38,6 +38,9 @@ RUN go get -u github.com/golang/protobuf/protoc-gen-go
 RUN go get -u github.com/golang/lint/golint
 
 # Node.js
+RUN groupadd --gid 1000 node \
+  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
   && for key in \
