@@ -68,4 +68,6 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 RUN groupadd --gid 1000 builder \
   && useradd --uid 1000 --gid builder --shell /bin/bash --create-home builder
 
+RUN chown -R builder /go
+
 USER builder
