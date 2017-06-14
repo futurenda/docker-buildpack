@@ -1,4 +1,4 @@
-FROM golang:1.8.1
+FROM golang:1.8.3
 
 # Python 3, unzip, netcat
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -59,7 +59,7 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 8.1.0
+ENV NODE_VERSION 8.1.1
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
   && curl -SLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
