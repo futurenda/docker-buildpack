@@ -31,12 +31,6 @@ RUN mkdir -p /tmp/downloads/protoc \
     && cp bin/protoc /usr/bin \
     && rm -rf /tmp/downloads/protoc
 
-# protoc-gen-go
-RUN go get -u github.com/golang/protobuf/protoc-gen-go
-
-# golint
-RUN go get -u github.com/golang/lint/golint
-
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
   && for key in \
@@ -71,3 +65,9 @@ RUN groupadd --gid 1000 builder \
 RUN chown -R builder /go
 
 USER builder
+
+# protoc-gen-go
+RUN go get -u github.com/golang/protobuf/protoc-gen-go
+
+# golint
+RUN go get -u github.com/golang/lint/golint
