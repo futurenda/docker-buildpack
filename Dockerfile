@@ -29,7 +29,8 @@ RUN mkdir -p /tmp/downloads/protoc \
     && wget https://github.com/google/protobuf/releases/download/v3.1.0/protoc-3.1.0-linux-x86_64.zip \
     && unzip protoc-3.1.0-linux-x86_64.zip \
     && cp bin/protoc /usr/bin \
-    && rm -rf /tmp/downloads/protoc
+    && rm -rf /tmp/downloads/protoc \
+    && chmod +x /usr/bin/protoc
 
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
