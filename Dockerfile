@@ -23,7 +23,6 @@ RUN chmod +x /usr/local/bin/docker-compose
 # awscli
 RUN pip3 install awscli
 
-
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
   && for key in \
