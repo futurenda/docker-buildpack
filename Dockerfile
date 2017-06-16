@@ -23,13 +23,6 @@ RUN chmod +x /usr/local/bin/docker-compose
 # awscli
 RUN pip3 install awscli
 
-# protoc 3.1
-RUN mkdir -p /tmp/downloads/protoc \
-    && cd /tmp/downloads/protoc \
-    && wget https://github.com/google/protobuf/releases/download/v3.1.0/protoc-3.1.0-linux-x86_64.zip \
-    && unzip protoc-3.1.0-linux-x86_64.zip \
-    && cp bin/protoc /usr/bin \
-    && rm -rf /tmp/downloads/protoc
 
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
@@ -63,6 +56,14 @@ RUN groupadd --gid 1000 builder \
   && useradd --uid 1000 --gid builder --shell /bin/bash --create-home builder
 
 RUN chown -R builder /go
+
+# protoc 3.3
+RUN mkdir -p /tmp/downloads/protoc \
+    && cd /tmp/downloads/protoc \
+    && wget https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip \
+    && unzip protoc-3.3.0-linux-x86_64.zip \
+    && cp bin/protoc /usr/bin \
+    && rm -rf /tmp/downloads/protoc
 
 USER builder
 
