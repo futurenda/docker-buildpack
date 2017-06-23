@@ -7,8 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-pip \
         unzip \
         xz-utils \
- 	netcat-openbsd \
- 	mariadb-client \
+ 	      netcat-openbsd \
+ 	      mariadb-client \
+        libdigest-hmac-perl \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Docker 17.03
