@@ -2,7 +2,7 @@
 
 ## Packages
 
-- Node.js 8.1.1
+- Node.js 8.1.2
 - python3
 - python3-pip
 - awscli
