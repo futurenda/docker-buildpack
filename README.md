@@ -9,7 +9,7 @@ https://hub.docker.com/r/futurenda/buildpack/builds/
 - python3-pip
 - awscli
 - Docker 17.03
-- docker-compose 1.11.2
+- docker-compose 1.15.0
 - Go 1.9.0
 - golint
 - protoc 3.3
