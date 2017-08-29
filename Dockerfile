@@ -5,10 +5,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3 \
         python3-dev \
         python3-pip \
+        python3-setuptools \
         unzip \
         xz-utils \
- 	      netcat-openbsd \
- 	      mariadb-client \
+ 	    netcat-openbsd \
+ 	    mariadb-client \
         libdigest-hmac-perl \
 	&& rm -rf /var/lib/apt/lists/*
 
