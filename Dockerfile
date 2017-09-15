@@ -79,8 +79,6 @@ ENV PATH="${PATH}:/npm/node_modules/.bin"
 COPY test.proto /tmp/test.proto
 RUN pbjs -t json /tmp/test.proto
 
-# protoc-gen-go
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
-
-# golint
 RUN go get -u github.com/golang/lint/golint
+RUN go get -u github.com/futurenda/fossil
