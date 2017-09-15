@@ -55,6 +55,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 # Protobuf.js
 RUN npm install -g protobufjs
+RUN cd /usr/local/lib/node_modules/protobufjs/cli && mv package.standalone.json package.json && npm install
 COPY test.proto /tmp/test.proto
 RUN pbjs -t json /tmp/test.proto
 
