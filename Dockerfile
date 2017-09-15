@@ -53,16 +53,14 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-# Protobuf.js
-RUN npm install -g protobufjs
-RUN cd /usr/local/lib/node_modules/protobufjs/cli && mv package.standalone.json package.json && npm install
-COPY test.proto /tmp/test.proto
-RUN pbjs -t json /tmp/test.proto
-
 RUN groupadd --gid 1000 builder \
   && useradd --uid 1000 --gid builder --shell /bin/bash --create-home builder
 
+RUN mkdir -p /npm
+COPY package.json /npm/package.json
+
 RUN chown -R builder /go
+RUN chown -R builder /npm
 
 # protoc 3.3
 RUN mkdir -p /tmp/downloads/protoc \
@@ -73,6 +71,13 @@ RUN mkdir -p /tmp/downloads/protoc \
     && rm -rf /tmp/downloads/protoc
 
 USER builder
+
+RUN cd /npm && npm install protobufjs
+RUN cd /npm/node_modules/protobufjs/cli && mv package.standalone.json package.json && npm install
+ENV PATH="${PATH}:/npm/node_modules/.bin"
+
+COPY test.proto /tmp/test.proto
+RUN pbjs -t json /tmp/test.proto
 
 # protoc-gen-go
 RUN go get -u github.com/golang/protobuf/protoc-gen-go
