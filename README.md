@@ -17,3 +17,4 @@ https://hub.docker.com/r/futurenda/buildpack/builds/
 - xz-utils
 - netcat-openbsd
 - mariadb-client
+- fossil
