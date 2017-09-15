@@ -54,7 +54,9 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 # Protobuf.js
-RUN npm install -g protobufjs-cli
+RUN npm install -g protobufjs
+COPY test.proto /tmp/test.proto
+RUN pbjs -t json /tmp/test.proto
 
 RUN groupadd --gid 1000 builder \
   && useradd --uid 1000 --gid builder --shell /bin/bash --create-home builder
