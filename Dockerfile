@@ -53,6 +53,9 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
+# Protobuf.js
+RUN npm install -g protobufjs
+
 RUN groupadd --gid 1000 builder \
   && useradd --uid 1000 --gid builder --shell /bin/bash --create-home builder
 
@@ -73,6 +76,3 @@ RUN go get -u github.com/golang/protobuf/protoc-gen-go
 
 # golint
 RUN go get -u github.com/golang/lint/golint
-
-# Protobuf.js
-RUN npm install -g protobufjs
