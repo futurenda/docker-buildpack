@@ -25,7 +25,7 @@ RUN chmod +x /usr/local/bin/docker-compose
 # migrate
 
 RUN curl -L -o /tmp/migrate.tar.gz https://github.com/mattes/migrate/releases/download/v3.0.1/migrate.linux-amd64.tar.gz \
-    && tar -xz -C /tmp -f /tmp/migrate.tgz \
+    && tar -xz -C /tmp -f /tmp/migrate.tar.gz \
     && mv /tmp/migrate.linux-amd64 /usr/bin/migrate
 
 # awscli
