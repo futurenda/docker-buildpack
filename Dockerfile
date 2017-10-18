@@ -22,6 +22,12 @@ RUN curl -L -o /tmp/docker.tgz https://download.docker.com/linux/static/stable/x
 RUN curl -L "https://github.com/docker/compose/releases/download/1.15.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 
+# migrate
+
+RUN curl -L -o /tmp/migrate.tar.gz https://github.com/mattes/migrate/releases/download/v3.0.1/migrate.linux-amd64.tar.gz \
+    && tar -xz -C /tmp -f /tmp/migrate.tgz \
+    && mv /tmp/migrate.linux-amd64 /usr/bin/migrate
+
 # awscli
 RUN pip3 install awscli
 
