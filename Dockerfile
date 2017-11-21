@@ -79,6 +79,7 @@ RUN mkdir -p /tmp/downloads/protoc \
 USER builder
 
 RUN cd /npm && npm install protobufjs
+RUN cd /npm && npm install grpcc
 RUN cd /npm/node_modules/protobufjs/cli && mv package.standalone.json package.json && npm install
 ENV PATH="${PATH}:/npm/node_modules/.bin"
 
