@@ -4,7 +4,7 @@ https://hub.docker.com/r/futurenda/buildpack/builds/
 
 ## Packages
 
-- Node.js 8.1.2
+- Node.js 9.2.0
 - python3
 - python3-pip
 - awscli
