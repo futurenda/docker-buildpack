@@ -10,7 +10,7 @@ https://hub.docker.com/r/futurenda/buildpack/builds/
 - awscli
 - Docker CE 17.06.1
 - docker-compose 1.15.0
-- Go 1.9.0
+- Go 1.9.2
 - golint
 - protoc 3.3
 - protoc-gen-go

@@ -1,4 +1,4 @@
-FROM golang:1.9.0-stretch
+FROM golang:1.9.2-stretch
 
 # Python 3, unzip, netcat
 RUN apt-get update && apt-get install -y --no-install-recommends \
